@@ -1,7 +1,7 @@
-2025-11-28 13:12:21,067-INFO-mysql database connectiuon is being established..
-2025-11-28 13:12:21,230-INFO-mysql database connectiuon has been established.
-2025-11-28 13:12:21,230-INFO-Test case execution for filter transformation has started...
-2025-11-28 13:12:21,308-INFO-Expected data in the file is     sales_id  product_id  store_id  quantity  price   sale_date region
+INFO     conftest:conftest.py:32 mysql database connectiuon is being established..
+INFO     conftest:conftest.py:35 mysql database connectiuon has been established.
+INFO     TestScripts.test_data_transformation:test_data_transformation.py:26 Test case execution for filter transformation has started...
+INFO     CommonUtilities.utilities:utilities.py:82 Expected data in the file is     sales_id  product_id  store_id  quantity  price   sale_date region
 0         10         110         4         9   17.0  2024-09-10    Low
 1         11         101         4        15   14.0  2024-09-11   High
 2         12         102         5         9   27.0  2024-09-12    Low
@@ -44,7 +44,7 @@
 39        49         109         2        11   18.5  2024-10-19   High
 40        50         110         3        12   21.0  2024-10-20    Low
 41        60         110         4         9   17.0  2024-09-10    Low
-2025-11-28 13:12:21,325-INFO-Actual data in the file is     sales_id  product_id  store_id  quantity  price   sale_date region
+INFO     CommonUtilities.utilities:utilities.py:84 Actual data in the file is     sales_id  product_id  store_id  quantity  price   sale_date region
 0         10         110         4         9   17.0  2024-09-10    Low
 1         11         101         4        15   14.0  2024-09-11   High
 2         12         102         5         9   27.0  2024-09-12    Low
@@ -87,9 +87,9 @@
 39        49         109         2        11   18.5  2024-10-19   High
 40        50         110         3        12   21.0  2024-10-20    Low
 41        60         110         4         9   17.0  2024-09-10    Low
-2025-11-28 13:12:21,330-INFO-Test case execution for filter transformation has completed...
-2025-11-28 13:12:21,333-INFO-Test case execution for Router_High_Region transformation has started...
-2025-11-28 13:12:21,345-INFO-Expected data in the file is     sales_id  product_id  store_id  quantity  price   sale_date region
+INFO     TestScripts.test_data_transformation:test_data_transformation.py:31 Test case execution for filter transformation has completed...
+INFO     TestScripts.test_data_transformation:test_data_transformation.py:39 Test case execution for Router_High_Region transformation has started...
+INFO     CommonUtilities.utilities:utilities.py:82 Expected data in the file is     sales_id  product_id  store_id  quantity  price   sale_date region
 0         11         101         4        15   14.0  2024-09-11   High
 1         13         103         6        10   22.0  2024-09-13   High
 2         15         105         4        12   11.0  2024-09-15   High
@@ -110,7 +110,7 @@
 17        45         105         7        10   25.0  2024-10-15   High
 18        47         107         9         6   24.0  2024-10-17   High
 19        49         109         2        11   18.5  2024-10-19   High
-2025-11-28 13:12:21,367-INFO-Actual data in the file is     sales_id  product_id  store_id  quantity  price   sale_date region
+INFO     CommonUtilities.utilities:utilities.py:84 Actual data in the file is     sales_id  product_id  store_id  quantity  price   sale_date region
 0         11         101         4        15   14.0  2024-09-11   High
 1         13         103         6        10   22.0  2024-09-13   High
 2         15         105         4        12   11.0  2024-09-15   High
@@ -131,5 +131,5 @@
 17        45         105         7        10   25.0  2024-10-15   High
 18        47         107         9         6   24.0  2024-10-17   High
 19        49         109         2        11   18.5  2024-10-19   High
-2025-11-28 13:12:21,367-INFO-Test case execution for Router_High_Region transformation has completed...
-2025-11-28 13:12:21,369-INFO-mysql database connection has been closed.
+INFO     TestScripts.test_data_transformation:test_data_transformation.py:44 Test case execution for Router_High_Region transformation has completed...
+INFO     conftest:conftest.py:38 mysql database connection has been closed.
