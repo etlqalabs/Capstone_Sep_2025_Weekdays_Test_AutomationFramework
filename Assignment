@@ -14,3 +14,4 @@
 a) Run at specified day and time
 b) Run when upstream job is successfully completed ( smoke test(success) -> regression test(trigger))
 c) Run the tests in parallel
+d) Re-runs failed test cases
