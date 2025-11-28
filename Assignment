@@ -1,0 +1,12 @@
+1. Complete the remaining data extraction test cases using the common utils function.
+2. Complete the remaining data transformation test cases using the common utils function.
+3. Complete the remaining data loading test cases using the common utils function.
+4. Implement the diffrences code in database to databse checks utilities
+5. Apply duplicate checks for all the other file
+6. Write a duplicate check method for database duplication check and apply on the target table
+7. Apply the null values checks on all te files
+8. Apply the null values checks on all the target
+9. Check file availabilty for all the file ( 4 tcs)
+10. Check file size for all the file( 4 tcs)
+11. utilities fucntion for referential interity ( foregin key )
+12. Implement data type ( schema checks ) across all the target table ( 4 tcs)
