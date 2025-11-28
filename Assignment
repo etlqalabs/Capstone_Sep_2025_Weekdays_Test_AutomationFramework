@@ -8,5 +8,8 @@
 8. Apply the null values checks on all the target
 9. Check file availabilty for all the file ( 4 tcs)
 10. Check file size for all the file( 4 tcs)
-11. utilities fucntion for referential interity ( foregin key )
+11. utilities fucntion for referential integrity ( foregin key )
 12. Implement data type ( schema checks ) across all the target table ( 4 tcs)
+13.Create jenkins job to :
+a) Run at specified day and time
+b) Run when upstream job is successfully completed ( smoke test(success) -> regression test(trigger))
