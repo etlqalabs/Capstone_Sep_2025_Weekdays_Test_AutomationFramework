@@ -189,3 +189,22 @@ def verify_expected_as_S3_to_actual_as_db(bucket_name_expected,file_key_expected
     assert df_actual.equals(df_expected),f"expected data {df_expected} doesn not match with actual data{df_actual}"
 
 '''
+
+
+def check_referential_integrity(source_conn,target_conn,source_query,target_query,key_column,csv_path):
+    try:
+        logger.info(f"Running source query: {source_query}")
+        df_source = pd.read_sql(source_query,source_conn)
+        logger.info(f"Running target query: {target_query}")
+        df_target = pd.read_sql(target_query, target_conn)
+        logger.info(f"Comparing key column: {key_column}")
+        df_not_matched = df_target[~df_target[key_column].isin(df_source[key_column])]
+        df_not_matched.to_csv(csv_path,index=False)
+        return df_not_matched
+    except Exception as e:
+        logger.error(f"Error during referential integerity check {e}")
+
+
+
+
+

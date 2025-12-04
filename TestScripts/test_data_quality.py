@@ -47,6 +47,7 @@ class TestDataQuality:
     def test_duplicates_check_all_targe_tables_specifci_columns(self):
         pass
 
+    @pytest.mark.order(5)
     @pytest.mark.DataQuality
     def test_DQ_Sales_csv_null_values_check(self):
         try:
@@ -59,6 +60,7 @@ class TestDataQuality:
             logger.error(f"Null check for sales_data has failed.{e}")
             pytest.fail()
 
+    @pytest.mark.order(4)
     @pytest.mark.DataQuality
     def test_DQ_Sales_csv_file_availabilty(self):
         try:
@@ -70,6 +72,7 @@ class TestDataQuality:
             pytest.fail()
 
     # Test case to check tables availbility in database
+    @pytest.mark.order(3)
     @pytest.mark.DataQuality
     def test_mysql_tables_exist(self,connect_to_mysql_database):
         expected_table_list = ["fact_inventory", "fact_sales", "monthly_sales_summary", "inventory_levels_by_store"]
@@ -80,3 +83,32 @@ class TestDataQuality:
             database_name="retaildwh"
         )
         assert len(missing_tables_list) == 0, f"Missing tables: {missing_tables_list}"
+
+    @pytest.mark.order(2)
+    @pytest.mark.DataQuality
+    def test_referentialIntegrity_product_id_between_staging_and_target(self,connect_to_mysql_database):
+        source_query ="""select product_id from staging_product order by product_id"""
+        target_query = """select product_id from fact_sales order by product_id"""
+        df_not_matched = check_referential_integrity(
+            source_conn = connect_to_mysql_database,
+            target_conn = connect_to_mysql_database,
+            source_query = source_query,
+            target_query = target_query,
+            key_column = 'product_id',
+            csv_path = "Differences/not_matching_product_data.csv"
+            )
+        assert df_not_matched.empty,"There are product_id valure in the target that do not exist in the source"
+
+    @pytest.mark.order(1)
+    def test_referentialIntegrity_store_id_between_Oracle_stores_and_target_mysql(self,connect_to_oracle_database,connect_to_mysql_database):
+        source_query ="""select store_id from stores_bkp order by store_id"""
+        target_query = """select store_id from fact_sales order by store_id"""
+        df_not_matched = check_referential_integrity(
+            source_conn = connect_to_oracle_database,
+            target_conn = connect_to_mysql_database,
+            source_query = source_query,
+            target_query = target_query,
+            key_column = 'store_id',
+            csv_path = "Differences/not_matching_store_data.csv"
+            )
+        assert df_not_matched.empty,"There are store_id valure in the target that do not exist in the source"

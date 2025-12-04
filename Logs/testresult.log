@@ -1,10 +1,10 @@
-2025-12-04 08:31:20,810-INFO-Null check for sales_data has started...
-2025-12-02025-12-04 08:31:21,030-INFO-mysql database connectiuon has been established.
-2025-12-04 08:31:21,073-INFO-the actual table is are : ['fact_inventory', 'fact_s2025-12-04 08:31:22,247-INFO-Oracle database connectiuon has been established.
-2025-12-04 08:31:22,250-INFO-Running source query: select store_id from stores_bkp order by store_id
-2025-12-04 08:31:22,276-INFO-Running target query: select store_id from fact_sales order by store_id
-2025-12-04 08:31:22,286-INFO-Comparing k2025-12-04 08:31:42,084-ERROR-Error while donloading the sales file from Linux server.
-2025-12-04 08:31:42,125-INFO-Expected data in the file is     sales_id  product_id  store_id  quantity  price   sale_date region
+INFO     CommonUtilities.utilities:test_data_quality.py:54 Null check for sales_dataINFO     conftest:conftest.py:35 mysql database connectiuon has been established.
+INFO     CommonUtilities.utilities:utilities.py:161 the actual table is are : ['fact_INFO     conftest:conftest.py:25 Oracle database connectiuon has been established.
+INFO     CommonUtilities.utilities:utilities.py:196 Running source query: select store_id from stores_bkp order by store_id
+INFO     CommonUtilities.utilities:utilities.py:198 Running target query: select store_id from fact_sales order by store_id
+INFO     CommonUtilities.utilities:utilities.py:200 Comparing key column: store_id
+INFO     conftest:conftest.py:28 Oracle database conneERROR    CommonUtilities.utilities:utilities.py:37 Error while donloading the sales file from Linux server.
+INFO     CommonUtilities.utilities:utilities.py:51 Expected data in the file is     sales_id  product_id  store_id  quantity  price   sale_date region
 0          1         101         1        10   15.0  2024-09-01   High
 1          2         102         1         5   25.0  2024-09-01    Low
 2          3         103         2         7   20.0  2024-09-02   High
@@ -65,7 +65,7 @@
 57        58         108         2         6   24.0  2024-09-08    Low
 58        59         109         3        11   19.0  2024-09-09   High
 59        60         110         4         9   17.0  2024-09-10    Low
-2025-12-04 08:31:42,175-INFO-Actual data in the file is     sales_id  product_id  store_id  quantity  price   sale_date region
+INFO     CommonUtilities.utilities:utilities.py:54 Actual data in the file is     sales_id  product_id  store_id  quantity  price   sale_date region
 0          1         101         1        10   15.0  2024-09-01   High
 1          2         102         1         5   25.0  2024-09-01    Low
 2          3         103         2         7   20.0  2024-09-02   High
@@ -126,11 +126,11 @@
 57        58         108         2         6   24.0  2024-09-08    Low
 58        59         109         3        11   19.0  2024-09-09   High
 59        60         110         4         9   17.0  2024-09-10    Low
-2025-12-04 08:31:42,188-INFO-Test case 'test_DE_from_sales_data_between_source_and_staging' execution has completed...
-2025-12-04 08:31:42,198-INFO-Oracle database connectiuon is being established..
-2025-12-04 08:31:42,619-INFO-Oracle database connectiuon has been established.
-2025-12-04 08:31:42,621-INFO-Test case execution for store data extraction has started...
-2025-12-04 08:31:42,656-INFO-Expected data in the file is    store_id    store_name
+INFO     TestScripts.test_data_extraction:test_data_extraction.py:31 Test case 'test_DE_from_sales_data_between_source_and_staging' execution has completed...
+INFO     conftest:conftest.py:22 Oracle database connectiuon is being established..
+INFO     conftest:conftest.py:25 Oracle database connectiuon has been established.
+INFO     TestScripts.test_data_extraction:test_data_extraction.py:67 Test case execution for store data extraction has started...
+INFO     CommonUtilities.utilities:utilities.py:82 Expected data in the file is    store_id    store_name
 0         1       Walmart
 1         2        Target
 2         3      Best Buy
@@ -141,7 +141,7 @@
 7         8          IKEA
 8         9     Walgreens
 9        10  CVS Pharmacy
-2025-12-04 08:31:42,673-INFO-Actual data in the file is    store_id    store_name
+INFO     CommonUtilities.utilities:utilities.py:84 Actual data in the file is    store_id    store_name
 0         1       Walmart
 1         2        Target
 2         3      Best Buy
@@ -152,10 +152,10 @@
 7         8          IKEA
 8         9     Walgreens
 9        10  CVS Pharmacy
-2025-12-04 08:31:42,674-INFO-Test case execution for store data extraction has completed...
-2025-12-04 08:31:42,677-INFO-Oracle database connection has been closed.
-2025-12-04 08:31:42,679-INFO-mysql database connection has been closed.
-        9   20.0  2024-10-08    Low
+INFO     TestScripts.test_data_extraction:test_data_extraction.py:73 Test case execution for store data extraction has completed...
+INFO     conftest:conftest.py:28 Oracle database connection has been closed.
+INFO     conftest:conftest.py:38 mysql database connection has been closed.
+7         9   20.0  2024-10-08    Low
 15        40         110         9         6   26.0  2024-10-10    Low
 16        42         102         4         4   20.0  2024-10-12    Low
 17        44         104         6         7   28.0  2024-10-14    Low
@@ -163,5 +163,5 @@
 19        48         108         1         3   27.0  2024-10-18    Low
 20        50         110         3        12   21.0  2024-10-20    Low
 21        60         110         4         9   17.0  2024-09-10    Low
-2025-12-04 08:31:21,781-INFO-Test case execution for Router_Low_Region transformation has completed...
-2025-12-04 08:31:21,784-INFO-mysql database connection has been closed.
+INFO     TestScripts.test_data_transformation:test_data_transformation.py:56 Test case execution for Router_Low_Region transformation has completed...
+INFO     conftest:conftest.py:38 mysql database connection has been closed.
