@@ -1,3 +1,5 @@
+Configuration properties
+
 # Oracle database
 ORACLE_USER = "system"
 ORACLE_PASSWORD = "admin"
